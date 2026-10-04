@@ -75,4 +75,8 @@ public final class Config {
         }
         return value;
     }
+
+    public static boolean logApiTraffic() {
+        return Boolean.parseBoolean(get("log.api.traffic"));
+    }
 }

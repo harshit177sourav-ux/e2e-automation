@@ -15,11 +15,11 @@ public class AuthResponse {
         return reason;
     }
 
-    public void setToken() {
+    public void setToken(String token) {
         this.token = token;
     }
 
-    public void setReason() {
+    public void setReason(String reason) {
         this.reason = reason;
     }
 
