@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Smoke Suite">
+    <test name="Sanity">
+        <classes>
+            <class name="com.harshitsourav.tests.SanityTest"/>
+            <class name="com.harshitsourav.tests.ConfigTest"/>
+            <class name="com.harshitsourav.tests.api.FirstApiTest"/>
+        </classes>
+    </test>
+</suite>
