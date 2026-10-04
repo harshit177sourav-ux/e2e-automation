@@ -22,14 +22,14 @@ Today it tests the public [Restful-Booker](https://restful-booker.herokuapp.com)
 
 ## Tech stack
 
-| Concern | Tool | Version |
-|---|---|---|
-| Language | Java | 17+ (`maven.compiler.release` = 17) |
-| Build | Apache Maven | 3.9+ |
-| Test runner | TestNG | 7.10.2 |
-| HTTP / API | REST Assured | 5.5.0 |
-| JSON | Jackson Databind | 2.17.2 |
-| Test execution | Maven Surefire | 3.5.2 |
+| Concern        | Tool             | Version                             |
+| -------------- | ---------------- | ----------------------------------- |
+| Language       | Java             | 17+ (`maven.compiler.release` = 17) |
+| Build          | Apache Maven     | 3.9+                                |
+| Test runner    | TestNG           | 7.10.2                              |
+| HTTP / API     | REST Assured     | 5.5.0                               |
+| JSON           | Jackson Databind | 2.17.2                              |
+| Test execution | Maven Surefire   | 3.5.2                               |
 
 ---
 
@@ -37,11 +37,11 @@ Today it tests the public [Restful-Booker](https://restful-booker.herokuapp.com)
 
 You need three things installed:
 
-| Tool | Check with | Install |
-|---|---|---|
-| Git | `git --version` | https://git-scm.com/downloads |
-| JDK 17 or newer | `java -version` | https://adoptium.net (or `brew install --cask temurin`) |
-| Maven 3.9+ | `mvn -v` | https://maven.apache.org/install.html (or `brew install maven`) |
+| Tool            | Check with      | Install                                                         |
+| --------------- | --------------- | --------------------------------------------------------------- |
+| Git             | `git --version` | https://git-scm.com/downloads                                   |
+| JDK 17 or newer | `java -version` | https://adoptium.net (or `brew install --cask temurin`)         |
+| Maven 3.9+      | `mvn -v`        | https://maven.apache.org/install.html (or `brew install maven`) |
 
 You also need internet access, because the tests call a live public API.
 
@@ -64,18 +64,18 @@ The first run downloads dependencies, so it takes a minute. After that it's fast
 
 ---
 
-## Running tests
+## Running tests -
 
 All commands run from the project root.
 
-| Goal | Command |
-|---|---|
-| Run the default smoke suite | `mvn test` |
-| Run a different suite file | `mvn test -Dsuite.file=src/test/resources/suites/<name>.xml` |
-| Run a single test class | `mvn test -Dtest=BookingModelTest` |
-| Run a single test method | `mvn test -Dtest=FirstApiTest#listBookingReturnsData` |
-| Clean build output, then run | `mvn clean test` |
-| Compile only (no tests) | `mvn test-compile` |
+| Goal                         | Command                                                      |
+| ---------------------------- | ------------------------------------------------------------ |
+| Run the default smoke suite  | `mvn test`                                                   |
+| Run a different suite file   | `mvn test -Dsuite.file=src/test/resources/suites/<name>.xml` |
+| Run a single test class      | `mvn test -Dtest=BookingModelTest`                           |
+| Run a single test method     | `mvn test -Dtest=FirstApiTest#listBookingReturnsData`        |
+| Clean build output, then run | `mvn clean test`                                             |
+| Compile only (no tests)      | `mvn test-compile`                                           |
 
 **Note:** the default suite is [smoke.xml](src/test/resources/suites/smoke.xml). It runs `SanityTest`, `ConfigTest` and `FirstApiTest`. `BookingModelTest` is not in that suite. It creates data on the remote API, so run it by name as shown above or add it to a suite.
 
@@ -93,13 +93,13 @@ Settings are looked up in this order, and the first match wins:
 
 ### Available keys
 
-| Key | Default (`qa`) | Purpose |
-|---|---|---|
-| `api.base.url` | `https://restful-booker.herokuapp.com` | Base URI for all API calls |
-| `ui.base.url` | `https://www.saucedemo.com` | Base URL for UI tests (reserved) |
-| `browser` | `chrome` | Browser name (reserved for UI tests) |
-| `headless` | `false` | Run the browser without a window (reserved for UI tests) |
-| `explicit.wait.second` | `10` | Explicit wait timeout in seconds |
+| Key                    | Default (`qa`)                         | Purpose                                                  |
+| ---------------------- | -------------------------------------- | -------------------------------------------------------- |
+| `api.base.url`         | `https://restful-booker.herokuapp.com` | Base URI for all API calls                               |
+| `ui.base.url`          | `https://www.saucedemo.com`            | Base URL for UI tests (reserved)                         |
+| `browser`              | `chrome`                               | Browser name (reserved for UI tests)                     |
+| `headless`             | `false`                                | Run the browser without a window (reserved for UI tests) |
+| `explicit.wait.second` | `10`                                   | Explicit wait timeout in seconds                         |
 
 ### Examples
 
@@ -211,12 +211,12 @@ public class GetBookingTest {
 
 ## Troubleshooting
 
-| Symptom | Likely cause and fix |
-|---|---|
-| `release version 17 not supported` | Your JDK is older than 17. Install JDK 17+ and check `java -version` and `mvn -v` (Maven prints the JDK it uses). |
-| `mvn: command not found` | Maven isn't installed or isn't on your `PATH`. |
-| `No config file found on class path /config/<env>.properties` | You passed `-Denv=<env>` but no matching file exists in `src/main/resources/config/`. |
-| `Missing Config key ...` | The key isn't in a system property, an environment variable or the properties file. |
-| Connection or timeout errors, or non-200 responses | The target API is down or unreachable. Check `api.base.url` and your network. Restful-Booker is a shared public service and is sometimes slow. |
-| `SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"` | Harmless. No logging backend is configured, so logs are silently dropped. |
-| Stale or odd build output | Run `mvn clean test`. |
+| Symptom                                                           | Likely cause and fix                                                                                                                           |
+| ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `release version 17 not supported`                                | Your JDK is older than 17. Install JDK 17+ and check `java -version` and `mvn -v` (Maven prints the JDK it uses).                              |
+| `mvn: command not found`                                          | Maven isn't installed or isn't on your `PATH`.                                                                                                 |
+| `No config file found on class path /config/<env>.properties`     | You passed `-Denv=<env>` but no matching file exists in `src/main/resources/config/`.                                                          |
+| `Missing Config key ...`                                          | The key isn't in a system property, an environment variable or the properties file.                                                            |
+| Connection or timeout errors, or non-200 responses                | The target API is down or unreachable. Check `api.base.url` and your network. Restful-Booker is a shared public service and is sometimes slow. |
+| `SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder"` | Harmless. No logging backend is configured, so logs are silently dropped.                                                                      |
+| Stale or odd build output                                         | Run `mvn clean test`.                                                                                                                          |
