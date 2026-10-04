@@ -1,5 +1,7 @@
-package com.harshitsourav.framework.api.models;
+package com.harshitsourav.framework.api;
 
+import com.harshitsourav.framework.api.clients.AuthClient;
+import com.harshitsourav.framework.api.models.authmodels.AuthResponse;
 import com.harshitsourav.framework.config.Config;
 
 public class TokenProvider {

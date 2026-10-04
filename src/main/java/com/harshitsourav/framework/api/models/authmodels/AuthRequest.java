@@ -1,4 +1,4 @@
-package com.harshitsourav.framework.api.models;
+package com.harshitsourav.framework.api.models.authmodels;
 
 public class AuthRequest {
     private String username;

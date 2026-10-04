@@ -1,8 +1,9 @@
-package com.harshitsourav.framework.api.models;
+package com.harshitsourav.framework.api.clients;
 
 import static io.restassured.RestAssured.given;
 
 import com.harshitsourav.framework.api.ApiClient;
+import com.harshitsourav.framework.api.models.authmodels.AuthRequest;
 
 import io.restassured.response.Response;
 

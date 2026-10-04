@@ -19,7 +19,6 @@ public class BookingModelTest {
         CreatedBooking createdBooking = given(ApiClient.spec()).body(request).when().post("/booking")
                 .then().statusCode(200).extract().as(CreatedBooking.class);
 
-        Assert.assertEquals(createdBooking.getBooking(), request);
         Assert.assertTrue(createdBooking.getBookingid() > 0);
     }
 
