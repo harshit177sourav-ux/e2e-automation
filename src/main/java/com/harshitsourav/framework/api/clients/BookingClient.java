@@ -50,4 +50,18 @@ public class BookingClient {
                 .when().put(BOOKING_ID);
     }
 
+    public Response deleteBooking(int bookingId, String token) {
+        return sendDelete(given(ApiClient.spec()).header("Cookie", TOKEN_COOKIE + "=" + token), bookingId);
+    }
+
+    public Response deleteBookingWithoutToken(int bookingId, String token) {
+        return sendDelete(given(ApiClient.spec()), bookingId);
+    }
+
+    private Response sendDelete(RequestSpecification request, int bookingId) {
+        return request
+                .pathParam("id", bookingId)
+                .when().delete(BOOKING_ID);
+    }
+
 }
