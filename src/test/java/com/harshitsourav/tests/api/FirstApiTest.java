@@ -20,8 +20,8 @@ public class FirstApiTest {
                 .log().ifValidationFails()
                 .when()
                 .get("/booking");
-        System.out.println(response.statusCode());
-        System.out.println(response.jsonPath().getList("$").size());
+        // System.out.println(response.statusCode());
+        // System.out.println(response.jsonPath().getList("$").size());
 
         Assert.assertEquals(response.statusCode(), 200);
         Assert.assertTrue(response.jsonPath().getList("$").size() > 0, "Expected atlease 1 booking");
@@ -36,7 +36,7 @@ public class FirstApiTest {
                 .log().all()
                 .when()
                 .get("/booking");
-        System.out.println(response.statusCode());
+        // System.out.println(response.statusCode());
     }
 
     @Test
@@ -53,6 +53,6 @@ public class FirstApiTest {
                 .get("/booking/{id}")
                 .then().statusCode(200)
                 .extract().response();
-        System.out.println(response.jsonPath().getString("firstname"));
+        // System.out.println(response.jsonPath().getString("firstname"));
     }
 }

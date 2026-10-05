@@ -25,7 +25,7 @@ public class ConfigTest {
 
     @Test
     public void printingApiUrls() {
-        System.out.println("ENV_VAR_SEEN:" + System.getenv("API_BASE_URL"));
-        System.out.println("API_URL:" + Config.apiBaseUrl());
+        // System.out.println("ENV_VAR_SEEN:" + System.getenv("API_BASE_URL"));
+        // System.out.println("API_URL:" + Config.apiBaseUrl());
     }
 }
