@@ -79,7 +79,8 @@ public class Booking {
         this.additionalneeds = additionalneeds;
     }
 
-    // equals/hashCode are needed because tests compare a sent Booking with the one read back
+    // equals/hashCode are needed because tests compare a sent Booking with the one
+    // read back
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -93,8 +94,11 @@ public class Booking {
                 && depositpaid == other.depositpaid
                 && Objects.equals(firstname, other.firstname)
                 && Objects.equals(lastname, other.lastname)
+                && Objects.equals(totalprice, other.totalprice)
+                && Objects.equals(depositpaid, other.depositpaid)
                 && Objects.equals(bookingdates, other.bookingdates)
                 && Objects.equals(additionalneeds, other.additionalneeds);
+
     }
 
     @Override

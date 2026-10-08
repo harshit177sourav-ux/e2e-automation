@@ -43,6 +43,10 @@ public class BookingClient {
                 .header("Cookie", TOKEN_COOKIE + "=" + token), bookingId, booking);
     }
 
+    public Response updateBookingWithoutToken(int bookingId, Booking booking) {
+        return sendUpdate(given(ApiClient.spec()), bookingId, booking);
+    }
+
     private Response sendUpdate(RequestSpecification request, int bookingId, Booking booking) {
         return request
                 .pathParam("id", bookingId)
